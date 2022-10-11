@@ -1,0 +1,5 @@
+Packages 
+son una forma de estructurar losmodulos de pyhton usando 'dotted molude names'. 
+un ejemplo seria:
+	el modulo llamdo A.B tiene un submodulo llamado B en un package llamado A.
+Ponele qe queres designar una coleccion de modulos(un puckage) para manejar uniformamente sound files and data. Hay muchos sound file formats(.wav, .aiff, .au), asi que necesitas crear una coleccion de modules para la conversion entre esyos tipos de formatos
