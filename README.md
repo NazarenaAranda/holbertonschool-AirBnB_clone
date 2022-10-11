@@ -1,2 +1,3 @@
 # holbertonschool-AirBnB_clone
-This is Our repository for the Airbnb console for Holberton School. Nazarena Aranda, Romina Benitez
+Por el momento este readme va a funcionar como un check list de lo que precisamos hacer y lo que ya est'a hecho.
+
