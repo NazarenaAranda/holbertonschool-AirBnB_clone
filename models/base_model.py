@@ -14,7 +14,7 @@ class BaseModel():
        if len(kwargs) == 0:
            self.id = str(uuid4()) """id convertido a string"""
            self.created_at = datetime.now() """fecha actual cuando se crea una instancia"""
-           self.updete_at = datetime.now() """fecha actualizada ca vez que se cambia el objeto"""
+           self.updete_at = datetime.now() """fecha actualizada cada vez que se cambia el objeto"""
        else:
            for key in kwargs:
                if key is not "_clas_":
