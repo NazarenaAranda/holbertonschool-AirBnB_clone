@@ -1,24 +1,22 @@
-# UUID:Universally unique identifiers #
+UUID:Universally unique identifiers
 
-## significa que estamos ante un identificador único generado por máquina de un cierto rango
-dos UUID que se generan de manera correcta, prácticamente no tienen ninguna posibilidad de ser idénticos, aunque sean creados en lugares y entornos diferentes. Por eso hablamos de un identificador único.
-Los UUID se suelen usar para crear identificadores únicos descentralizados. Se generan como seguros en un código de back-end, un dispositivo cliente o su motor de base de datos.
-Esto garantiza que las instancias de objetos siempre representen un estado válido y no necesiten propiedades de ID, además de facilitar el manejo de los registros secundarios que necesitan una referencia a su elemento principal (como Author) se pueden insertar en el momento, sin tener que esperar a que sea insertada una base de todas.
-##
+Significa que estamos ante un identificador único generado por máquina de un cierto rango, dos UUID que se generan de manera correcta, prácticamente no tienen ninguna posibilidad de ser idénticos, aunque sean creados en lugares y entornos diferentes. Por eso hablamos de un identificador único.
+Los UUID se suelen usar para crear identificadores únicos descentralizados. Se generan como seguros en un código de back-end, un dispositivo cliente o su motor de base de datos. Esto garantiza que las instancias de objetos siempre representen un estado válido y no necesiten propiedades de ID, además de facilitar el manejo de los registros secundarios que necesitan una referencia a su elemento principal (como Author) se pueden insertar en el momento, sin tener que esperar a que sea insertada una base de todas.
 
-# uuid4 (): Genera un UUID aleatorio. #
+uuid4 (): Genera un UUID aleatorio.
 
-# datetime: #
+DATETIME:
 
-## recuperamos información sobre la fecha y hora actuales que incluían el año, mes, día y hora actuales en ese momento. ##
+Recuperamos información sobre la fecha y hora actuales que incluían el año, mes, día y hora actuales en ese momento, se puede especificar que queres recuperar, por ejempo si se quiere solo el año, solo la hora o el día, se puede.
 
-# El método setattr() de Python se utiliza para asignar al atributo object su valor. #
+El método setattr() de Python se utiliza para asignar al atributo object su valor.
 
-## Sintaxis de la función setattr() de Python
-Sintaxis : setattr(obj, var, val) ##
+Sintaxis de la función setattr() de Python
 
-# Parámetros: # 
+Sintaxis : setattr(obj, var, val)
 
-## Obj: Objeto cuyo atributo se va a asignar.
+Parámetros:
+
+Obj: Objeto cuyo atributo se va a asignar.
 var : atributo de objeto que debe asignarse.
-val : valor con el que se va a asignar la variable. ##
+val : valor con el que se va a asignar la variable.
