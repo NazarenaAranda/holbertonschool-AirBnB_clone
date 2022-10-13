@@ -38,7 +38,7 @@ class BaseModel:
         dicnew = self.__dict__.copy()
         dicnew["created_at"] = self.created_at.isoformat()
         dicnew["updated_at"] = self.updated_at.isoformat()
-        dicnew["__class__"] = self.__clas__.__name__
+        dicnew["__class__"] = self.__class__.__name__
         return newdic
     
     def save(self):
