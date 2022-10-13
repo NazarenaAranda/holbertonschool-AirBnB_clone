@@ -39,12 +39,11 @@ class BaseModel:
         dicnew["created_at"] = self.created_at.isoformat()
         dicnew["updated_at"] = self.updated_at.isoformat()
         dicnew["__class__"] = self.__class__.__name__
-        return newdic
+        return dicnew
     
     def save(self):
         """ this is useful when you update and has the current time """
         self.udated_at = datetime.now()
-        models.storage.save()
 
     def __str__(self):
         """ String rep of the model """
