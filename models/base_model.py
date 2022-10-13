@@ -1,36 +1,52 @@
 #!/usr/bin/python3
-from uuid import uuid4 """uuid genera identificadores unicos,
-uuid4 genera un UUID aleatorio, el cual como dije anteriormente
-va a ser unico"""
-from datetime import datetime """libreria para manejar fechas, incorpora tipos
-de datos date, time y datetiime para representar fechas y
-funciones para manejarlas"""
+"""
+	BaseModel MODULE Romina
+"""
 
 
-class BaseModel():
-    """class BaseModel"""
-   def __init__(self, *args, **kwargs):
-       """Initialize attributes"""
-       if len(kwargs) == 0:
-           self.id = str(uuid4()) """id convertido a string"""
-           self.created_at = datetime.now() """fecha actual cuando se crea una instancia"""
-           self.updete_at = datetime.now() """fecha actualizada cada vez que se cambia el objeto"""
-       else:
-           for key in kwargs:
-               if key is not "_clas_":
-                   setattr(self, key, kwargs[key])
+import json
+import uuid
+import datetime
+import models
 
-    def _str_(self):
-        """string with information about the model"""
-        return (f"[{self._class.name}] ({self.id}) {self.dict_}")
 
-    def save(self):
-        """updating the updated_at attribute with the current date"""
-        self.updated_at = datetime.now
+class BaseModel:
+    """ This will be define all common attributes/methods 
+    for other classes """
+
+    def __init__(self, *args, **kwargs):
+        if len(kwargs) != 0 and kwargs is not None: # si existen keyword arguments y no son 0
+            for key, value in kwargs.items(): #buscando en las kword para identificar si es id, created_at, upadated_at, __class__ o setattr
+                if key == "id":
+                    self.id = value 
+                elif key == __class__:
+                    pass
+                elif key == "created_at":
+                    self.created_at = datetime.strptime(value, %Y-%m-%dT%H:%M:%S.%f) #strptime() to create a datetime object from the string.
+                elif key == "updated_at":
+                    self.updated_at = datetime.strptime(value, %Y-%m-%dT%H:%M:%S.%f)
+                else:
+                    setattr(self, key, value) #le setea un valor si no es ninuno de los casos anteriores
+        else:
+            self.id = str(uuid)
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
+            models.storage.new(self)
 
     def to_dict(self):
-        """returns a dictionary containing all keys/values of __dict__ of the instance"""
-        dicc = {}
+        """ This will be return a dictionary that contains
+        key and values in __dic__ of the instance """
+        dicnew = self.__dict__.copy()
+        dicnew["created_at"] = self.created_at.isoformat()
+        dicnew["updated_at"] = self.updated_at.isoformat()
+        dicnew["__class__"] = self.__clas__.__name__
+        return newdic
+    
+    def save(self):
+        """ this is useful when you update and has the current time """
+        self.udated_at = datetime.now()
+        models.storage.save()
 
-
-
+    def __str__(self):
+        """ String rep of the model """
+        return "[BaseModel] ({}) {}".format(self.id, self.__dict__)
