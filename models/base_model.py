@@ -15,18 +15,18 @@ class BaseModel:
     for other classes """
 
     def __init__(self, *args, **kwargs):
-        if len(kwargs) != 0 and kwargs is not None: # si existen keyword arguments y no son 0
-            for key, value in kwargs.items(): #buscando en las kword para identificar si es id, created_at, upadated_at, __class__ o setattr
+        if len(kwargs) != 0 and kwargs is not None:
+            for key, value in kwargs.items():
                 if key == "id":
                     self.id = value 
                 elif key == __class__:
                     pass
                 elif key == "created_at":
-                    self.created_at = datetime.strptime(value, %Y-%m-%dT%H:%M:%S.%f) #strptime() to create a datetime object from the string.
+                    self.created_at = datetime.strptime(value, %Y-%m-%dT%H:%M:%S.%f)
                 elif key == "updated_at":
                     self.updated_at = datetime.strptime(value, %Y-%m-%dT%H:%M:%S.%f)
                 else:
-                    setattr(self, key, value) #le setea un valor si no es ninuno de los casos anteriores
+                    setattr(self, key, value)
         else:
             self.id = str(uuid)
             self.created_at = datetime.now()
