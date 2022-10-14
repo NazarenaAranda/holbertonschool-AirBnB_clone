@@ -33,6 +33,4 @@ class FileStorage:
             with open(self.__file_path, 'r') as f:
                 dic = json.loads(f)
                 for key, value in dic.items():
-                    self._objects[key] = eval(value["class_"](**value)
-
-
+                    self._objects[key] = eval(value["class_"])(**value)
