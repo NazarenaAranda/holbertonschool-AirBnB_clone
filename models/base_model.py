@@ -1,11 +1,6 @@
 #!/usr/bin/python3
-"""
-    BaseModel 
-"""
-
-
 import json
-import uuid
+from uuid import uuid4
 from datetime import datetime
 import models
 
@@ -28,7 +23,7 @@ class BaseModel:
                 else:
                     setattr(self, key, value)
         else:
-            self.id = str(uuid.uuid4())
+            self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
 
@@ -36,8 +31,8 @@ class BaseModel:
         """ This will be return a dictionary that contains
         key and values in __dic__ of the instance """
         dicnew = self.__dict__.copy()
-        dicnew["created_at"] = self.created_at.isoformat(T)
-        dicnew["updated_at"] = self.updated_at.isoformat(T)
+        dicnew["created_at"] = self.created_at.isoformat("T")
+        dicnew["updated_at"] = self.updated_at.isoformat("T")
         dicnew["__class__"] = self.__class__.__name__
         return dicnew
     
