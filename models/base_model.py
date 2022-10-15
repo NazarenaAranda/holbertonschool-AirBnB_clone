@@ -44,4 +44,4 @@ class BaseModel:
 
     def __str__(self):
         """ String rep of the model """
-        return "[BaseModel] ({}) {}".format(self.id, self.__dict__)
+        return (f"[{self._class.name}] ({self.id}) {self.dict_}")
