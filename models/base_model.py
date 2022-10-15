@@ -23,7 +23,7 @@ class BaseModel:
                 elif key == "updated_at":
                     self.updated_at = datetime.strptime(value, var)
                 else:
-                    setattr(self, key, value)
+                    setattr(self,key, kwargs[key])
         else:
             self.id = str(uuid4())
             self.created_at = datetime.now()
