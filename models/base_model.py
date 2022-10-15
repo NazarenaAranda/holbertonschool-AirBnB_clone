@@ -11,7 +11,7 @@ class BaseModel:
     for other classes """
 
     def __init__(self, *args, **kwargs):
-        if len(kwargs) != 0 and kwargs is not None:
+        if kwargs:
             for key, value in kwargs.items():
                 if key == "id":
                     self.id = value 
