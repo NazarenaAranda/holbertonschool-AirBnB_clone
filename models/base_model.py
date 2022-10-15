@@ -22,8 +22,6 @@ class BaseModel:
                     self.created_at = datetime.strptime(value, var)
                 elif key == "updated_at":
                     self.updated_at = datetime.strptime(value, var)
-                else:
-                    setattr(self,key, kwargs[key])
         else:
             self.id = str(uuid4())
             self.created_at = datetime.now()
@@ -44,4 +42,4 @@ class BaseModel:
 
     def __str__(self):
         """ String rep of the model """
-        return (f"[{self._class.name}] ({self.id}) {self.dict_}")
+        return "[BaseModel] ({}) {}".format(self.id, self.__dict__)
