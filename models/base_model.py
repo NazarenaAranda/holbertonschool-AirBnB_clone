@@ -38,7 +38,7 @@ class BaseModel:
 
     def save(self):
         """ this is useful when you update and has the current time """
-        self.udated_at = datetime.now()
+        self.updated_at = datetime.now()
 
     def __str__(self):
         """ String rep of the model """
