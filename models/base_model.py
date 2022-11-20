@@ -9,9 +9,10 @@ class BaseModel:
     """ This will be define all common attributes/methods
     for other classes """
     
-    var = "%Y-%m-%dT%H:%M:%S.%f"
 
     def __init__(self, *args, **kwargs):
+        var = "%Y-%m-%dT%H:%M:%S.%f"
+
         if kwargs:
             for key, value in kwargs.items():
                 if key == "id":
