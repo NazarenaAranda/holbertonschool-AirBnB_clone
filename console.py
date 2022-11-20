@@ -103,7 +103,7 @@ class HBNBCommand(cmd.Cmd):
         if len(arg) == 0:
             for key, value in dictt.items():
                 listt.append(str(value))
-            print(my_listt)
+            print(listt)
         else:
             for key, value in dictt.items():
                 if my_arg[0] == value.__class__.__name__:
